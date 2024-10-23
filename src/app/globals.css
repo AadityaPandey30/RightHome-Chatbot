@@ -9,9 +9,27 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #ffffff;
     --foreground: #ededed;
   }
+}
+
+::-webkit-scrollbar{
+  width: 1px;
+}
+
+::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+  background: transparent;
+}
+
+.decor{
+  background: linear-gradient(45deg , #688AE9,#f06f82);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 body {
@@ -24,4 +42,11 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.colo{
+  background-image: linear-gradient(to right,#688AE9, #C66D7B);
+  -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: inherit;
 }
