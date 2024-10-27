@@ -7,7 +7,6 @@ import MessageInput from './MessageInput';
 import Header from './Header';
 import Welcome from './Welcome'; // Import the new Welcome component
 
-
 export default function ChatPage() {
   const [messages, setMessages] = useState([]);
   const [sidebarExpanded, setSidebarExpanded] = useState(true);
@@ -26,31 +25,32 @@ export default function ChatPage() {
     setSidebarExpanded(!sidebarExpanded);
   };
 
-  // Adjust margin based on sidebar state
-const inputMargin = sidebarExpanded ? 'ml-64' : 'ml-2'; // Match this with the ChatPage
+  // Dynamically adjust the margin based on sidebar state
+  const contentMargin = sidebarExpanded ? 'ml-16' : 'ml-2'; // Adjust based on sidebar width
 
   return (
-    <div className={`flex h-screen`}>
-  {/* Sidebar */}
-  <Sidebar isExpanded={sidebarExpanded} toggleSidebar={toggleSidebar} />
+    <div className="flex h-screen">
+      {/* Sidebar */}
+      <Sidebar isExpanded={sidebarExpanded} toggleSidebar={toggleSidebar} />
 
-  {/* Main content area */}
-  <div className={`flex flex-col flex-1 bg-white transition-all duration-300 ml-0 md:ml-4 ${inputMargin}`}>
-    {/* Fixed Header */}
-    <Header sidebarExpanded={sidebarExpanded} toggleSidebar={toggleSidebar} />
+      {/* Main content area */}
+      <div className={`flex flex-col flex-1 bg-white transition-all duration-300 ${contentMargin}`}>
+        {/* Fixed Header */}
+        <Header sidebarExpanded={sidebarExpanded} />
 
-    {/* Chat area */}
-    <div className="flex-grow my-10 pl-2">
-      {messages.length === 0 ? (
-        <Welcome onPromptClick={handlePromptClick} />
-      ) : (
-        <ChatArea messages={messages} />
-      )}
+        {/* Chat area */}
+        <div className="flex-grow">
+          {/* Conditionally render WelcomeComponent or ChatArea */}
+          {messages.length === 0 ? (
+            <Welcome onPromptClick={handlePromptClick} />
+          ) : (
+            <ChatArea messages={messages} />
+          )}
+        </div>
+
+        {/* Message Input */}
+        <MessageInput onSendMessage={handleSendMessage} sidebarExpanded={sidebarExpanded} />
+      </div>
     </div>
-
-    {/* Message Input */}
-    <MessageInput onSendMessage={handleSendMessage} sidebarExpanded={sidebarExpanded} />
-  </div>
-</div>
   );
 }

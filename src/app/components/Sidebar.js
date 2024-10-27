@@ -5,6 +5,7 @@ import { MdArrowBackIosNew } from "react-icons/md";
 export default function Sidebar({ isExpanded, toggleSidebar }) {
   return (
     <div
+    
       className={`h-full bg-[#F7F2FA] text-gray-600 z-10 transition-all duration-300 
         ${isExpanded ? 'w-32 md:w-64' : 'w-[34px] md:w-[68px]'} 
         ${isExpanded ? 'fixed md:relative' : 'absolute md:relative'} 

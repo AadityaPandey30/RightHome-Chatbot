@@ -22,11 +22,11 @@ export default function MessageInput({ onSendMessage, sidebarExpanded }) {
   };
 
   // Adjust margin based on sidebar state
-  const inputMargin = sidebarExpanded ? '-ml-20' : 'ml-2'; // Match this with the ChatPage
+  const inputMargin = sidebarExpanded ? 'ml-48' : 'ml-20'; // Match this with the ChatPage
 
   return (
-    <div className={`w-full absolute bottom-0 transition-all duration-300 bg-white pt-2 px-6 ${inputMargin}`}>
-      <div className="flex items-center bg-[#ECE6F0] rounded-[34px] py-3 px-5 w-full md:w-[95%] max-w-4xl md:m-auto" >
+    <div className={`w-full fixed bottom-0 left-0 transition-all duration-300 ${inputMargin}`}>
+      <div className="flex items-center bg-[#ECE6F0] rounded-[34px] py-3 px-5 w-full max-w-4xl m-auto mb-3">
         {/* Input box */}
         <input
           type="text"
@@ -40,14 +40,14 @@ export default function MessageInput({ onSendMessage, sidebarExpanded }) {
         {/* Animated Send Button */}
         <button
           onClick={handleSend}
-          className={`p-2 text-2xl text-black transition-transform duration-800 ${
+          className={`ml-2 p-2 text-2xl text-black transition-transform duration-800 ${
             message.trim() ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
           }`}
         >
           <BiSend />
         </button>
       </div>
-      <p className="text-gray-400 text-center text-[13px] mt-2 mb-3">I can make mistakes. So double-check it.</p>
+      <p className="text-gray-400 text-center text-[13px] mb-3">I can make mistakes. So double-check it.</p>
     </div>
   );
 }

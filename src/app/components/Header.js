@@ -11,7 +11,7 @@ export default function Header({ sidebarExpanded, toggleSidebar }) {
       >
 
         {/* Toggle button */}
-      <div className="mt-auto">
+      {/* <div className="mt-auto">
         <button
           className={`bg-[#E6E0E9] text-black shadow-sm shadow-gray-500 p-3 rounded-lg w-fit fixed top-4 left-4 transition-transform duration-300 
             ${sidebarExpanded ? 'rotate-0 md:opacity-0' : 'rotate-180'} `}
@@ -19,7 +19,7 @@ export default function Header({ sidebarExpanded, toggleSidebar }) {
         >
           <MdArrowBackIosNew />
         </button>
-       </div>
+       </div> */}
 
         {/* Company Logo */}
         <div className="text-xl font-bold cursor-pointer">
