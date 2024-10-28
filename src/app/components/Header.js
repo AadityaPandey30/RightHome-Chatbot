@@ -29,7 +29,7 @@ export default function Header({ sidebarExpanded, toggleSidebar }) {
         {/* User Profile */}
         <div className="flex items-center space-x-4 cursor-pointer">
           <img
-            src="/assets/profile.png" // Replace with actual profile image
+            src="/assets/profile.jpeg" // Replace with actual profile image
             alt="User Profile"
             className="h-10 w-10 rounded-full border-gray-400 border-2 mr-2 fixed right-4"
           />
