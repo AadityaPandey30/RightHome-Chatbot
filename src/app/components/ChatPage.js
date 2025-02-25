@@ -105,7 +105,7 @@ export default function ChatPage() {
           {messages.length === 0 ? (
             <Welcome onPromptClick={handlePromptClick} />
           ) : (
-            <ChatArea messages={messages} />
+            <ChatArea messages={messages} isLoading={isLoading} />
           )}
         </div>
 
